@@ -43,15 +43,13 @@ const Home: NextPage = () => {
       <Box>
         {loadingArchetypes && <p>Loading...</p>}
         {errorArchetypes && <p>Error...</p>}
-        <Grid container spacing={1}>
+        <Grid container>
           {archetypeData?.data.data.map((archetype: Archetype) => (
-            <Grid key={archetype.id} item>
-              <ShowCard
-                width={200}
-                alt={archetype.name}
-                url={archetype.card_images[0].image_url}
-              />
-            </Grid>
+            <ShowCard
+              key={archetype.id}
+              alt={archetype.name}
+              url={archetype.card_images[0].image_url}
+            />
           ))}
         </Grid>
       </Box>
