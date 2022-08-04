@@ -3,6 +3,25 @@ export interface ICard {
   meta: Meta;
 }
 
+export interface ArchetypeInfo {
+  data: Archetype[];
+}
+
+export interface Archetype {
+  id: number
+  name: string
+  type: string
+  desc: string
+  atk: number
+  def: number
+  level: number
+  race: string
+  attribute: string
+  archetype: string
+  card_images: CardImage[]
+  card_prices: CardPrice[]
+}
+
 export interface CardInfo {
   id: number;
   name: string;
@@ -49,4 +68,8 @@ export interface Meta {
   pages_remaining: number;
   next_page: string;
   next_page_offset: number;
+}
+
+export interface Archetype {
+  readonly archetype_name: string;
 }

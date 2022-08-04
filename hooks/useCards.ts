@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { AxiosResponse } from "axios";
+import axios, { AxiosResponse } from "axios";
 
 import api from "../utils/baseApi";
-import { ICard } from "../interface/cards";
+import { ICard, Archetype } from "../interface/cards";
 
 export const useCards = (limit: number) => {
   const {
@@ -16,14 +16,18 @@ export const useCards = (limit: number) => {
   return { cards, isLoadingCards, isCardsError };
 };
 
-export const useArchetypeCards = () => {
+export const useArchetypeList = () => {
   const {
     data,
-    isLoading: isLoadingCards,
-    isError: isCardsError,
-  } = useQuery<AxiosResponse<ICard>>(["cards-by-date"], () =>
-    api.get("", { params: { archetype: "Dark Magician" } })
+    isLoading: isLoadingArchetypeList,
+    isError: isErrorArchetypeList,
+  } = useQuery(["archetypes"], () =>
+    axios.get("https://db.ygoprodeck.com/api/v7/archetypes.php")
   );
-  const cards = data?.data?.data;
-  return { cards, isLoadingCards, isCardsError };
+  const archetypeListData = data?.data;
+  return {
+    archetypeListData,
+    isLoadingArchetypeList,
+    isErrorArchetypeList,
+  };
 };
