@@ -7,10 +7,11 @@ import SearchArchetypeInput from "../src/components/atoms/SearchArchetypeInput";
 
 import MainLayout from "../src/components/template/MainLayout";
 import api from "../utils/baseApi";
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { AxiosResponse } from "axios";
 import { Archetype, ArchetypeResponse } from "../interface/archetype";
 import ShowCard from "../src/components/atoms/ShowCard";
+import { Fragment } from "react";
 function searchArchetype(term: string) {
   return api.get("", {
     params: {
@@ -45,11 +46,22 @@ const Home: NextPage = () => {
         {errorArchetypes && <p>Error...</p>}
         <Grid container>
           {archetypeData?.data.data.map((archetype: Archetype) => (
-            <ShowCard
-              key={archetype.id}
-              alt={archetype.name}
-              url={archetype.card_images[0].image_url}
-            />
+            <Grid item xs={12} sm={6} md={4} lg={3} key={archetype.id}>
+              <Box
+                display="flex"
+                flexDirection="column"
+                justifyContent="center"
+                alignItems="center"
+                m={1}
+              >
+                <ShowCard
+                  alt={archetype.name}
+                  url={archetype.card_images[0].image_url}
+                />
+
+                <Typography>{archetype.name}</Typography>
+              </Box>
+            </Grid>
           ))}
         </Grid>
       </Box>

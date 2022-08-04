@@ -4,7 +4,11 @@ const nextConfig = {
   swcMinify: true,
   compiler: {
     reactRemoveProperties: true,
-    removeConsole: true
+    removeConsole: true,
+  },
+  i18n: {
+    locales: ["en", "pt", "fr", "de"],
+    defaultLocale: "en",
   },
 };
 
