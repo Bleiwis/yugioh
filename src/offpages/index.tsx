@@ -3,12 +3,12 @@ import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { Box, Grid, Typography } from "@mui/material";
 
-import { CardInfo } from "../src/interface/archetype";
-import { useArchetypeList } from "../src/hooks/useCards";
-import SearchArchetypeInput from "../src/components/atoms/SearchArchetypeInput";
-import MainLayout from "../src/components/template/MainLayout";
-import api from "../utils/baseApi";
-import ShowCard from "../src/components/atoms/ShowCard";
+import { CardInfo } from "../interface/archetype";
+import { useArchetypeList } from "../hooks/useCards";
+import SearchArchetypeInput from "../components/atoms/SearchArchetypeInput";
+import MainLayout from "../components/template/MainLayout";
+import api from "../../utils/baseApi";
+import ShowCard from "../components/atoms/ShowCard";
 
 function searchArchetype(term: string) {
   return api.get("", {

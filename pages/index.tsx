@@ -78,7 +78,7 @@ const SearchPage: NextPage = () => {
           typeof option === "string" ? option : option.name
         }
         renderInput={(params) => (
-          <TextField {...params} label="Highlights" margin="normal" />
+          <TextField {...params} margin="normal" />
         )}
         renderOption={(props, option, { inputValue }) => {
           const matches = match(option.name, inputValue);
