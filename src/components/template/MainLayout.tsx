@@ -10,7 +10,7 @@ interface MainLayoutProps {
 }
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
-  const canonical = "https://yugioh-blue.vercel.app/";
+  const canonical = "https://yugiohsearch.vercel.app/";
   return (
     <React.Fragment>
       <NextSeo
