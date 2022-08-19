@@ -10,9 +10,11 @@ import {
   QueryClientProvider,
 } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { DefaultSeo } from 'next-seo'
+
 import theme from "../styles/theme";
 import createEmotionCache from "../utils/createEmotionCache";
-
+import SEO from '../seo'
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
@@ -42,6 +44,7 @@ export default function MyApp(props: MyAppProps) {
         <CssBaseline />
         <QueryClientProvider client={queryClient}>
           <Hydrate state={pageProps.dehydratedState}>
+          <DefaultSeo {...SEO} />
             <Component {...pageProps} />
           </Hydrate>
           <ReactQueryDevtools />

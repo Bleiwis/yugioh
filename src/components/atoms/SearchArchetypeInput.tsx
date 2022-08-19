@@ -4,11 +4,10 @@ import parse from "autosuggest-highlight/parse";
 import match from "autosuggest-highlight/match";
 import { Controller } from "react-hook-form";
 import { Autocomplete, TextField } from "@mui/material";
-
-import { Archetype } from "../../../interface/cards";
+import { ArchetypeList } from "../../interface/archetype";
 
 interface SearchArchetypeInputProps {
-  archetypeOptions: Archetype[];
+  archetypeOptions: ArchetypeList[];
   control: any;
   findArchetype: Function;
 }
@@ -25,7 +24,7 @@ const SearchArchetypeInput: FC<SearchArchetypeInputProps> = ({
           {...field}
           autoHighlight
           options={archetypeOptions}
-          getOptionLabel={(option: Archetype) => option.archetype_name}
+          getOptionLabel={(option: ArchetypeList) => option.archetype_name}
           renderInput={(params) => (
             <TextField
               {...params}

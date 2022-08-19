@@ -16,6 +16,7 @@ const ShowCard: FC<ShowCardProps> = ({ url, width, alt }) => {
         backgroundSize: "cover",
         width: width,
         height: 247,
+        margin: 10,
       }}
       width={width || 170}
       alt={alt}

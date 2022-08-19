@@ -6,7 +6,7 @@ const NavigationBar = () => {
     <Fragment>
       <AppBar>
         <Container>
-          <Toolbar>hello world</Toolbar>
+          <Toolbar></Toolbar>
         </Container>
       </AppBar>
       <Toolbar />

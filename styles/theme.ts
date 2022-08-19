@@ -6,6 +6,9 @@ const theme = createTheme({
   palette: {
     mode: "dark",
   },
+  shape: {
+    borderRadius: 10,
+  },
   typography: {
     h1: {
       fontWeight: 500,
